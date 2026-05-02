@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Junin Pes Store – Premium eFootball Accounts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0A0A0F;
+            background-image: radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.08) 0%, transparent 60%);
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        /* Animated background grid */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            animation: moveGrid 20s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes moveGrid {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A20;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00D4FF;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #FFFFFF, #00D4FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .logo i {
+            font-size: 2rem;
+            color: #00D4FF;
+            background: none;
+            -webkit-text-fill-color: #00D4FF;
+        }
+        .nav-links {
+            display: flex;
+            gap: 36px;
+        }
+        .nav-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 6px 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00D4FF;
+            transition: 0.3s;
+            box-shadow: 0 0 8px #00D4FF;
+        }
+        .nav-links a:hover {
+            color: #00D4FF;
+            text-shadow: 0 0 5px #00D4FF;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .hero h1 span {
+            color: #00D4FF;
+            text-shadow: 0 0 10px rgba(0,212,255,0.5);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            color: #B0B0C0;
+            max-width: 650px;
+            margin: 0 auto 30px;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin: 50px 0 40px;
+        }
+        .stat-card {
+            background: rgba(20, 20, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            padding: 25px 35px;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.3);
+            transition: 0.4s;
+            cursor: default;
+        }
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00D4FF;
+            box-shadow: 0 0 25px rgba(0,212,255,0.3);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00D4FF;
+            font-family: 'Orbitron', monospace;
+        }
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            padding: 18px 25px;
+            background: rgba(20, 20, 30, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 80px;
+            border: 1px solid rgba(0,212,255,0.3);
+            animation: fadeInUp 0.8s 0.2s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-fill-mode: forwards;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .trust-item i {
+            color: #00D4FF;
+            font-size: 1.2rem;
+        }
+        .instagram-badge {
+            background: linear-gradient(135deg, #f58529, #dd2a7b);
+            padding: 8px 20px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .instagram-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(245,133,41,0.5);
+        }
+
+        /* Section title */
+        .section-title {
+            font-size: 2.2rem;
+            font-family: 'Orbitron', monospace;
+            margin: 60px 0 30px;
+            font-weight: 700;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.6s;
+        }
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title span {
+            color: #00D4FF;
+        }
+
+        /* Account grid */
+        .account-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .account-card {
+            background: rgba(20, 20, 30, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 24px;
+            transition: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(0,212,255,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+        }
+        .account-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .account-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00D4FF;
+            box-shadow: 0 20px 35px rgba(0,212,255,0.25);
+        }
+        .account-img {
+            width: 100%;
+            height: 200px;
+            background: #151520;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .account-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .account-card:hover .account-img img {
+            transform: scale(1.05);
+        }
+        .account-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', monospace;
+        }
+        .account-price {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #00D4FF;
+            margin: 12px 0;
+        }
+        .btn-wa {
+            background: #25D366;
+            color: #000;
+            width: 100%;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-wa:active {
+            transform: scale(0.97);
+        }
+
+        /* Calculator */
+        .calculator {
+            background: rgba(20, 20, 30, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            border: 1px solid rgba(0,212,255,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.6s;
+        }
+        .calculator.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .calc-slider {
+            width: 100%;
+            max-width: 500px;
+            margin: 25px auto;
+            -webkit-appearance: none;
+            background: #00D4FF;
+            height: 6px;
+            border-radius: 10px;
+        }
+        .calc-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 12px #00D4FF;
+            transition: 0.1s;
+        }
+        .calc-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #00D4FF;
+            margin: 15px 0;
+        }
+        .calc-add {
+            background: #00D4FF;
+            color: #0A0A0F;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .calc-add:active {
+            transform: scale(0.97);
+        }
+
+        /* Order form */
+        .order-form {
+            background: rgba(20, 20, 30, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid rgba(0,212,255,0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.6s;
+        }
+        .order-form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #E0E0E0;
+        }
+        input {
+            width: 100%;
+            padding: 16px;
+            border-radius: 30px;
+            border: 1px solid #2A2A35;
+            background: #0F0F15;
+            color: #FFFFFF;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        input:focus {
+            border-color: #00D4FF;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0,212,255,0.5);
+        }
+        .submit-btn {
+            background: #00D4FF;
+            color: #0A0A0F;
+            padding: 16px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* WhatsApp group button */
+        .group-btn {
+            display: inline-block;
+            background: #00D4FF;
+            color: #0A0A0F;
+            padding: 16px 32px;
+            border-radius: 60px;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 30px 0;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .group-btn:hover {
+            background: #FFFFFF;
+            box-shadow: 0 0 20px #00D4FF;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(0,212,255,0.2);
+            margin-top: 80px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .hero h1 { font-size: 2.8rem; }
+            .section-title { font-size: 1.9rem; }
+        }
+        @media (max-width: 700px) {
+            .navbar { flex-direction: column; }
+            .hero h1 { font-size: 2.2rem; }
+            .stat-card { padding: 15px 20px; }
+            .stat-number { font-size: 1.8rem; }
+            .trust-row { border-radius: 40px; padding: 12px 20px; gap: 18px; }
+            .calculator, .order-form { padding: 24px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .account-name { font-size: 1.3rem; }
+            .account-price { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-bolt"></i> JUNIN<span style="color:#00D4FF;">PES</span></div>
+        <div class="nav-links">
+            <a href="#">SHOP</a>
+            <a href="#">HOW IT WORKS</a>
+            <a href="#">BUY NOW</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>PREMIUM <span>eFOOTBALL</span> ACCOUNTS</h1>
+        <p>Dominate the pitch with elite players, coins & exclusive squads. Instant delivery, 100% safe.</p>
+        <div class="stats">
+            <div class="stat-card"><div class="stat-number">500+</div><div>Accounts sold</div></div>
+            <div class="stat-card"><div class="stat-number">4.9 ★</div><div>Avg. rating</div></div>
+            <div class="stat-card"><div class="stat-number">24H</div><div>Support</div></div>
+        </div>
+        <div class="trust-row">
+            <div class="trust-item"><i class="fas fa-shield-alt"></i> Cyber Crime Approved</div>
+            <div class="trust-item"><i class="fas fa-lock"></i> 100% Refund Guarantee</div>
+            <div class="instagram-badge"><i class="fab fa-instagram"></i> 61.3k followers</div>
+        </div>
+    </section>
+
+    <h2 class="section-title" id="accountsTitle">🔥 <span>AVAILABLE ACCOUNTS</span> 🔥</h2>
+    <div class="account-grid" id="accountsGrid">
+        <!-- Account cards will stay static but we add visible class via JS -->
+        <div class="account-card">
+            <div class="account-img"><img src="images/IMG_8164.JPG" alt="Beast ID"></div>
+            <div class="account-name">BEAST ID</div>
+            <div class="account-price">€199.99</div>
+            <button class="btn-wa" data-product="BEAST ID" data-price="199.99"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</button>
+        </div>
+        <div class="account-card">
+            <div class="account-img"><img src="images/IMG_8163.JPG" alt="Legend XI"></div>
+            <div class="account-name">LEGEND XI</div>
+            <div class="account-price">€249.99</div>
+            <button class="btn-wa" data-product="LEGEND XI" data-price="249.99"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</button>
+        </div>
+        <div class="account-card">
+            <div class="account-img"><img src="images/IMG_0011.PNG" alt="Epic Squad"></div>
+            <div class="account-name">EPIC SQUAD</div>
+            <div class="account-price">€299.99</div>
+            <button class="btn-wa" data-product="EPIC SQUAD" data-price="299.99"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</button>
+        </div>
+        <div class="account-card">
+            <div class="account-img"><img src="images/41997d70-0aed-4b9c-aa21-1b586d7736a7.JPG" alt="Dark Horse"></div>
+            <div class="account-name">DARK HORSE</div>
+            <div class="account-price">€149.99</div>
+            <button class="btn-wa" data-product="DARK HORSE" data-price="149.99"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</button>
+        </div>
+        <div class="account-card">
+            <div class="account-img"><img src="images/3ab67d0b-d3d2-41d8-8d41-a1c39cb0b65e.JPG" alt="Future Star"></div>
+            <div class="account-name">FUTURE STAR</div>
+            <div class="account-price">€89.99</div>
+            <button class="btn-wa" data-product="FUTURE STAR" data-price="89.99"><i class="fab fa-whatsapp"></i> Buy on WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Coin Calculator -->
+    <div class="calculator" id="calculator">
+        <h3>💰 COIN CALCULATOR</h3>
+        <input type="range" id="coinSlider" class="calc-slider" min="150" max="100000" step="50" value="1000">
+        <div class="calc-price" id="coinAmount">1,000 🪙</div>
+        <div class="calc-price" id="coinPriceUSD" style="font-size: 1.2rem;">$8.00 USD</div>
+        <button class="calc-add" id="addCoinsToCart">📲 Order these coins on WhatsApp</button>
+    </div>
+
+    <!-- Order Form -->
+    <div class="order-form" id="orderForm">
+        <h3>📋 PURCHASE REQUEST</h3>
+        <p>Leave your details and we'll reach out on WhatsApp to complete your order.</p>
+        <div class="form-group">
+            <label>Your name (optional)</label>
+            <input type="text" id="customerName" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+            <label>WhatsApp number *</label>
+            <input type="tel" id="customerPhone" required placeholder="+1234567890">
+        </div>
+        <div class="form-group">
+            <label>Service needed</label>
+            <input type="text" id="gameId" placeholder="Your ingame ID">
+        </div>
+        <button class="submit-btn" id="submitOrderBtn">Send request via WhatsApp</button>
+    </div>
+
+    <!-- WhatsApp Group -->
+    <div style="text-align: center;">
+        <a href="#" id="whatsappGroupLink" class="group-btn"><i class="fab fa-whatsapp"></i> 📱 Join our WhatsApp community</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Junin Pes Store – Official eFootball Partner</p>
+</footer>
+
+<script>
+    // ====================== ⚙️ CONFIGURATION ======================
+    // Replace with your real WhatsApp number (e.g., "2348123456789" – no +, no spaces)
+    const YOUR_WHATSAPP_NUMBER = "447476157107";
+    // Replace with your real WhatsApp group invite link
+    const GROUP_LINK = "https://chat.whatsapp.com/Hv1079r2hwSGjdNgL2wwCr?mode=gi_t";
+    // ==============================================================
+
+    function openWhatsApp(message) {
+        const url = `https://wa.me/${447476157107}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    // Account buttons
+    document.querySelectorAll('.btn-wa').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const product = btn.getAttribute('data-product');
+            const price = btn.getAttribute('data-price');
+            const msg = `Hello, I'm interested in buying ${product} for €${price}. Can you give me more details?`;
+            openWhatsApp(msg);
+        });
+    });
+
+    // Coin calculator with animated number
+    const slider = document.getElementById('coinSlider');
+    const coinAmountSpan = document.getElementById('coinAmount');
+    const coinPriceSpan = document.getElementById('coinPriceUSD');
+    let currentCoins = { coins: 1000, usd: 8.00 };
+
+    function calculateCoinPrice(coins) {
+        let usd = (coins / 1000) * 8;
+        let discount = Math.min(0.3, (coins - 1000) / 100000 * 0.3);
+        usd = usd * (1 - discount);
+        usd = Math.round(usd * 100) / 100;
+        return usd;
+    }
+
+    function animateNumber(element, start, end, decimals = 0) {
+        let current = start;
+        const step = (end - start) / 30;
+        const interval = setInterval(() => {
+            current += step;
+            if ((step > 0 && current >= end) || (step < 0 && current <= end)) {
+                clearInterval(interval);
+                current = end;
+            }
+            if (decimals === 0) {
+                element.innerText = Math.round(current).toLocaleString();
+            } else {
+                element.innerText = current.toFixed(decimals);
+            }
+        }, 15);
+    }
+
+    function updateCoinDisplay() {
+        let val = parseInt(slider.value);
+        let usd = calculateCoinPrice(val);
+        animateNumber(coinAmountSpan, currentCoins.coins, val, 0);
+        animateNumber(coinPriceSpan, currentCoins.usd, usd, 2);
+        currentCoins = { coins: val, usd: usd };
+    }
+    slider.addEventListener('input', updateCoinDisplay);
+    updateCoinDisplay();
+
+    document.getElementById('addCoinsToCart').addEventListener('click', () => {
+        const msg = `Hello, I want to order ${currentCoins.coins.toLocaleString()} coins for $${currentCoins.usd.toFixed(2)}. Please proceed.`;
+        openWhatsApp(msg);
+    });
+
+    // Order form
+    document.getElementById('submitOrderBtn').addEventListener('click', () => {
+        const name = document.getElementById('customerName').value.trim() || "Guest";
+        const phone = document.getElementById('customerPhone').value.trim();
+        const gameId = document.getElementById('gameId').value.trim();
+        if (!phone) {
+            alert("Please enter your WhatsApp number.");
+            return;
+        }
+        const msg = `New order request:\nName: ${name}\nWhatsApp: ${phone}\neFootball ID: ${gameId || "Not provided"}\n\nPlease contact me to complete the purchase.`;
+        openWhatsApp(msg);
+        document.getElementById('customerName').value = "";
+        document.getElementById('customerPhone').value = "";
+        document.getElementById('gameId').value = "";
+    });
+
+    // Group link
+    document.getElementById('whatsappGroupLink').addEventListener('click', (e) => {
+        e.preventDefault();
+        if (GROUP_LINK === "YOUR_GROUP_LINK_HERE") {
+            alert("Please set your WhatsApp group link in the code.");
+        } else {
+            window.open(GROUP_LINK, '_blank');
+        }
+    });
+
+    // Scroll reveal animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-title, .calculator, .order-form, .account-card').forEach(el => {
+        observer.observe(el);
+    });
+    // manually trigger for already visible
+    document.querySelectorAll('.account-card').forEach(card => {
+        if (card.getBoundingClientRect().top < window.innerHeight) {
+            card.classList.add('visible');
+        }
+    });
+    document.querySelector('.section-title')?.classList.add('visible');
+    document.querySelector('.calculator')?.classList.add('visible');
+    document.querySelector('.order-form')?.classList.add('visible');
+</script>
+</body>
+</html>
